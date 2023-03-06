@@ -9,7 +9,7 @@ With `popscle`, we recommend analyzing single cell RNA-seq (and other single cel
 
 Read the tutorial at https://github.com/statgen/popscle/wiki , if you would like to learn how to run software tools in popscle by example.
 
-## Install Freemuxlet
+# Install Freemuxlet
 
 ```
 git clone https://github.com/statgen/popscle
@@ -18,9 +18,9 @@ cd build
 ```
 
 clone the htslib (missing in myriad) and specify customized installing path by replacing "cmake .." with:
-git clone https://github.com/samtools/htslib
 
 ```
+git clone https://github.com/samtools/htslib
 cmake -DHTS_INCLUDE_DIRS=/home/sejjjjm/Scratch/programs/htslib  -DHTS_LIBRARIES=/home/sejjjjm/Scratch/programs/htslib/libhts.a ..
 ```
 
