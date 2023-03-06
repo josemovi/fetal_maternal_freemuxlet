@@ -13,6 +13,7 @@ Read the tutorial at https://github.com/statgen/popscle/wiki , if you would like
 
 ```
 git clone https://github.com/statgen/popscle
+cd popscle
 mkdir build
 cd build
 ```
