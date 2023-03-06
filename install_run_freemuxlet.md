@@ -1,25 +1,22 @@
-(from popscle github) 'pscle' is a suite of population scale analysis tools for single-cell genomics data. The key software tools in this repository includes demuxlet (version 2) and freemuxlet, a genotyping-free method to deconvolute barcoded cells by their identities while detecting doublets.
+(from popscle github) `pscle` is a suite of population scale analysis tools for single-cell genomics data. The key software tools in this repository includes demuxlet (version 2) and freemuxlet, a genotyping-free method to deconvolute barcoded cells by their identities while detecting doublets.
 
 # Quick Overview
 
-With popscle, we recommend analyzing single cell RNA-seq (and other single cell genomic) dataset in two steps.
+With `popscle`, we recommend analyzing single cell RNA-seq (and other single cell genomic) dataset in two steps.
 
-    Use dsc-pileup to generate pileups around known variants from aligned sequence reads.
-    Use demuxlet (with genotypes) or freemuxlet (without genotypes) to deconvolute the identities of barcoded cells.
+    Use `dsc-pileup` to generate pileups around known variants from aligned sequence reads.
+    Use `demuxlet` (with genotypes) or `freemuxlet` (without genotypes) to deconvolute the identities of barcoded cells.
 
 Read the tutorial at https://github.com/statgen/popscle/wiki , if you would like to learn how to run software tools in popscle by example.
-
-Read the documentation below if you want a comprehensive documentation about these tools.
 
 ## Install Freemuxlet
 
 ```
-$ git clone https://github.com/statgen/popscle
-
-$ mkdir build
-
-$ cd build
+git clone https://github.com/statgen/popscle
+mkdir build
+cd build
 ```
+
 # clone the htslib (missing in myriad) and specify customized installing path by replacing "cmake .." with:
 git clone https://github.com/samtools/htslib
 
