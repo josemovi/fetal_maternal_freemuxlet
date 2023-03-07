@@ -21,6 +21,7 @@ The next step is
 ```
 cmake
 ```
+
 We found that the library htslib is missing in myriad. So, we need to install it first. 
 clone the htslib (missing in myriad) and specify customized installing path by replacing "cmake .." with:
 
@@ -34,7 +35,11 @@ Then, you can proceed with the cmake step and modify your path as:
 ```
 cmake -DHTS_INCLUDE_DIRS=/home/sejjjjm/Scratch/programs/htslib  -DHTS_LIBRARIES=/home/sejjjjm/Scratch/programs/htslib/libhts.a ..
 ```
+Finally, to to build the binary, run
 
+```
+make
+```
 # Run freemxulet 
 
 ```
