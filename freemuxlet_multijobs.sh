@@ -27,11 +27,13 @@ datadir=\$workdir
 --vcf /home/sejjjjm/Scratch/scripts/ucsc.hg38.liftover.out.withchr.c1_22.nohbb.vcf \
 --out \$workdir/freemuxlet_out/$ID --group-list \$workdir/cellbender-out/$ID-CellBender-out_cell_barcodes.csv
 
+\$popscle freemuxlet --plp \$workdir/freemuxlet_out/$ID --nsample 2 --out \$workdir/freemuxlet_out/$ID
+
 EOF
 
     qsub freemuxlet_single_job_submission.sh
     echo "Submitted job for id=$ID"
 
     Wait for X min between jobs to avoid the cluster thinking you are a robot. Adjust accordingly
-    sleep 400
+#    sleep 400
 done
