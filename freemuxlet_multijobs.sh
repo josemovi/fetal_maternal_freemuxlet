@@ -24,7 +24,7 @@ workdir='/home/sejjjjm/Scratch/cellranger7_out'
 datadir=\$workdir
 
 \$popscle dsc-pileup --sam \$datadir/$ID/outs/per_sample_outs/$ID/count/sample_alignments.bam \
---vcf /home/sejjjjm/Scratch/cellranger7_out/ucsc.hg38.liftover.out.withchr.c1_22.nohbb.vcf \
+--vcf /home/sejjjjm/Scratch/scripts/ucsc.hg38.liftover.out.withchr.c1_22.nohbb.vcf \
 --out \$workdir/freemuxlet_out/$ID
 
 EOF
