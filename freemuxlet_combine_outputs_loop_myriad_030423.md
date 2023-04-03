@@ -23,7 +23,7 @@ library(ggvenn)
 library(data.table)
 ```
 
-# Create an empty data frame to sequentially add results
+## Create an empty data frame to sequentially add results
 The empty data frame will be populated with barcodes and their genotype per library in each iteration 
 
 ```
@@ -33,13 +33,15 @@ freemux_object <- data.frame(matrix(ncol = 4, nrow = 0))
 names(freemux_object)<-c('barcode','genotype','doublet','library')
 ```
 
-# Read library metadata
+## Read library metadata
 csv file with library information, including conditions, donor attributes and tissue types 
 
 ```
 samples_info<-read.csv('Aggr-FMI-All-GEX-TCR-aggregation-20230328-modified.csv')
 samples<-(samples_info$sample_id)
 ```
+
+## Loop assign fetal/maternal origin to freemuxlet groups and combine libraries
 
 ```
 for (i in 1:length(samples)){
@@ -125,7 +127,7 @@ for (i in 1:length(samples)){
   print(paste('finished_n',lnumber))}
 ```
 
-# write csv with the combined dataframe
+## write csv with the combined dataframe
 
 ```
 write.csv(freemux_object,'freemux_object.csv')
