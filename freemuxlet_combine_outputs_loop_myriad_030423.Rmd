@@ -96,20 +96,22 @@ for (i in 1:length(samples)){
       ## assign fetal/maternal origin to barcodes in seurat object: if fetal group is 0,0 
       if(gfetal == '0,0'){
         gmaternal = '1,1'
-            # assign Maternal/fetal origin to each barcode and add new 'genotype' dataframe to the seurat object
+        # assign Maternal/fetal origin to each barcode and add new 'genotype' dataframe to the seurat object
         db$genotype<-gsub(gfetal,"Fetal",db$freemuxlet) ;   db$genotype<-gsub('1,1',"Maternal",db$genotype)
         db$genotype<-gsub("1,0","Unknown",db$genotype) ; db$genotype<-gsub("0,1","Unknown",db$genotype)
         # add singlet/doublet info to the seurat object
         db$doublet<-gsub(gfetal,"False",db$freemuxlet) ; db$doublet<-gsub('1,1',"False",db$doublet)
-        db$doublet<-gsub("1,0","True",db$doublet) ; db$doublet<-gsub("0,1","True",db$doublet)} else         ## assign fetal/maternal origin to barcodes in seurat object: if fetal group is 1,1 
+        db$doublet<-gsub("1,0","True",db$doublet) ; db$doublet<-gsub("0,1","True",db$doublet)
+        } else
+        ## assign fetal/maternal origin to barcodes in seurat object: if fetal group is 1,1 
           {
           gmaternal = '0,0'
-      db$genotype<-gsub('0,0',"Maternal",db$freemuxlet); db$genotype<-gsub('1,1',"Fetal",db$genotype)
-      db$genotype<-gsub("1,0","Unknown",db$genotype) ; db$genotype<-gsub("0,1","Unknown",db$genotype)
-      # add singlet/doublet info to the seurat object
-      db$doublet<-gsub('0,0',"False",db$freemuxlet); db$doublet<-gsub('1,1',"False",db$doublet)
-      db$doublet<-gsub("1,0","True",db$doublet) ; db$doublet<-gsub("0,1","True",db$doublet)}
-    }
+          db$genotype<-gsub('0,0',"Maternal",db$freemuxlet); db$genotype<-gsub('1,1',"Fetal",db$genotype)
+          db$genotype<-gsub("1,0","Unknown",db$genotype) ; db$genotype<-gsub("0,1","Unknown",db$genotype)
+          # add singlet/doublet info to the seurat object
+          db$doublet<-gsub('0,0',"False",db$freemuxlet); db$doublet<-gsub('1,1',"False",db$doublet)
+          db$doublet<-gsub("1,0","True",db$doublet) ; db$doublet<-gsub("0,1","True",db$doublet)}
+          }
   
   
   # create data frame with each barcode as a rowname
@@ -126,7 +128,8 @@ for (i in 1:length(samples)){
   
   # combine the new dataframe into the growing datafrem with all libraries
   freemux_object <-rbind(freemux_object,freemux[,-1])
-  print(paste('finished_n',lnumber))}
+  print(paste('finished_n',lnumber))
+}
 ```
 
 # write csv with the combined dataframe
