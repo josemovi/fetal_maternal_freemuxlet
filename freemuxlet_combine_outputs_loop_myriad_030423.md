@@ -119,7 +119,8 @@ for (i in 1:length(samples)){
   
   # combine the new dataframe into the growing datafrem with all libraries
   freemux_object <-rbind(freemux_object,freemux[,-1])
-  print(paste('finished_n',lnumber))}
+  print(paste('finished_n',lnumber))
+}
 ```
 
 ## write csv with the combined dataframe
