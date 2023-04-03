@@ -14,12 +14,7 @@ library(Matrix)
 library(dplyr)
 library(Seurat)
 library(SeuratDisk)
-library(patchwork)
 library(hdf5r)
-library(knitr)
-library(ggplot2)
-library(ggExtra)
-library(ggvenn)
 library(data.table)
 ```
 
