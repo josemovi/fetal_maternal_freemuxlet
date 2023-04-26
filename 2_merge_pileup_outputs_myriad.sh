@@ -1,5 +1,11 @@
 #!/bin/bash
 # read list of samples
+
+# to execute: bash 2_merge_pileup_outputs_myriad.sh list_patients.txt
+
+# list_of_patientes.txt is a list with patient IDs, one per line (F1678CM F1682RH F1686GS...)
+
+# read list_patients.txt and loop per line (per ID)
 samples=$1
 cat $samples | while read ID; do
 
